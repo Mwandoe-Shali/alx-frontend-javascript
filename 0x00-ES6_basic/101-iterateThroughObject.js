@@ -18,7 +18,7 @@ export default function iterateThroughObject(reportWithIterator) {
   // Loop through all the properties of the object
   while (!iteratorResult.done) {
     // Append the current property to the result string
-    result += iteratorResult.value + ' | ';
+    result += `${iteratorResult.value} | `;
 
     // Get the next property of the object
     iteratorResult = reportWithIterator.next();
