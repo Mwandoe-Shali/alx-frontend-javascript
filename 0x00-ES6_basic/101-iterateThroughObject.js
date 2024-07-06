@@ -1,29 +1,25 @@
 #!/usr/bin/node
 
 /**
- * This function takes an object as an argument and returns a string
- * that contains all the properties of the object separated by ' | '.
- * The last occurrence of ' | ' is removed from the result.
+ * This function takes an object as an argument and iterates through it using
+ * a for...of loop. It then returns a string containing all the values of the
+ * object, separated by the ' | ' character.
  *
  * @param {Object} reportWithIterator - The object to iterate through.
- * @return {string} The string that contains all the properties of the object.
+ * @return {string} A string containing all the values of the object, separated
+ * by the ' | ' character.
  */
 export default function iterateThroughObject(reportWithIterator) {
-  // Initialize an empty string to store the result
-  let result = '';
+  // Initialize an empty array to store the values of the object
+  const returnString = [];
 
-  // Get the first property of the object
-  let iteratorResult = reportWithIterator.next();
-
-  // Loop through all the properties of the object
-  while (!iteratorResult.done) {
-    // Append the current property to the result string
-    result += `${iteratorResult.value} | `;
-
-    // Get the next property of the object
-    iteratorResult = reportWithIterator.next();
+  // Iterate through the object using a for...of loop and push each value to the
+  // returnString array
+  for (const report of reportWithIterator) {
+    returnString.push(report);
   }
 
-  // Remove the last occurrence of ' | ' from the result string
-  return result.slice(0, -3);
+  // Join the values of the returnString array into a single string, separated by
+  // the ' | ' character and return the result
+  return returnString.join(' | ');
 }
