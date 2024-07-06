@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 /**
- * This function takes an array and a string as input and 
+ * This function takes an array and a string as input and
  * returns a new array where each element of the input array
  *      is appended with the input string.
  *
