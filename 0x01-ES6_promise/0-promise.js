@@ -1,7 +1,11 @@
 #!/usr/bin/node
 export default function getResponseFromAPI() {
+  const success = true;
   return new Promise((resolve, reject) => {
-    resolve(data);
-    reject(error);
+    if (success) {
+      resolve();
+    } else {
+      reject();
+    }
   });
 }
